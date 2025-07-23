@@ -1,0 +1,8 @@
+<div class="grid grid-cols-2 gap-6 w-full" [formGroup]="form">
+  <input type="text" pInputText formControlName="name" />
+  <input type="text" pInputText formControlName="description" />
+
+  <div class="flex justify-end items-center gap-4 col-span-2">
+    <p-button label="Cerrar" (onClick)="close(form.value)" />
+  </div>
+</div>

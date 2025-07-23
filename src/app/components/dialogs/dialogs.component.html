@@ -1,0 +1,9 @@
+<div
+  class="flex justify-center items-center gap-6 w-full h-[500px] p-4 shadow-md"
+>
+  <p-button label="Dialog" severity="info" (onClick)="openModal1()" />
+  <p-button label="Dinamic dialog" severity="danger" (onClick)="openModal2()" />
+  <p-button label="Custom dinamic dialog" severity="primary" (onClick)="openModal3()" />
+</div>
+
+<app-dialog-1 [(visible)]="modal1Visible" />

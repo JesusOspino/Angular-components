@@ -1,0 +1,13 @@
+<button
+  type="button"
+  class="inline-flex w-8 h-8 p-0 items-center justify-center surface-0 dark:surface-800 border border-surface-200 dark:border-surface-600 rounded transition-all duration-300 ease-in-out"
+  (click)="toggleTheme()"
+  [attr.aria-label]="
+    isDarkMode() ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'
+  "
+>
+  <i
+    class="pi dark:text-white"
+    [ngClass]="isDarkMode() ? 'pi-sun' : 'pi-moon'"
+  ></i>
+</button>
