@@ -1,6 +1,7 @@
 <div class="flex flex-col w-full">
   <div class="w-full flex justify-between items-center p-4">
-    <div class="w-auto">
+    <div class="w-auto flex justify-start items-center gap-3">
+      <img src="icon.png" alt="icono de la app" width="30" />
       <h1 class="text-2xl">Angular components</h1>
     </div>
     <div class="flex gap-3 justify-end items-center">
@@ -8,6 +9,7 @@
       <app-theme-configurator-button />
     </div>
   </div>
+
   <p-tabs [value]="currentRoute()" scrollable>
     <p-tablist>
       @for(tab of tabs(); track tab.route) {
@@ -17,6 +19,7 @@
       }
     </p-tablist>
   </p-tabs>
+
   <div class="p-3">
     <router-outlet />
   </div>

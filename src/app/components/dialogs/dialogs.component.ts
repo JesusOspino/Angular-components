@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { Dialog1Component } from './dialog-1/dialog-1.component';
 import { Dialog2Component } from './dialog-2/dialog-2.component';
@@ -6,6 +6,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { CustomDialogService } from '../../common/services/custom-dialog.service';
 import { Dialog3Component } from './dialog-3/dialog-3.component';
 import { Temporal } from '../../common/interfaces/temporal.interface';
+import { ConfigPageService } from 'src/app/common/services/config-page.service';
 
 @Component({
   selector: 'app-dialogs',
@@ -13,11 +14,27 @@ import { Temporal } from '../../common/interfaces/temporal.interface';
   templateUrl: './dialogs.component.html',
   styleUrl: './dialogs.component.scss',
 })
-export class DialogsComponent {
+export class DialogsComponent implements OnInit {
   private readonly dialogService = inject(DialogService);
   private readonly customDialogService = inject(CustomDialogService);
+  private readonly configPageService = inject(ConfigPageService);
 
   modal1Visible = signal<boolean>(false);
+
+  ngOnInit(): void {
+    this.configPage();
+  }
+
+  configPage() {
+    this.configPageService.setTitle('Dialogos');
+    this.configPageService.setDescription(
+      'Muestra las diferentes maneras de usar una ventana de dialogo con primeng'
+    );
+    this.configPageService.setBreadcrumbItems([
+      { label: 'Components' },
+      { label: 'Dialogos' },
+    ]);
+  }
 
   openModal1(): void {
     this.modal1Visible.set(true);
@@ -25,7 +42,7 @@ export class DialogsComponent {
 
   openModal2(): void {
     this.dialogService.open(Dialog2Component, {
-      header: 'Modal 1',
+      header: 'Modal 2',
       width: '50%',
       closable: true,
       maximizable: true,
@@ -35,8 +52,8 @@ export class DialogsComponent {
         '640px': '90vw',
       },
       data: {
-        letter: 'Hola jesus',
-        number: 2,
+        name: 'Hola jesus',
+        description: 'Bienvenido, estas en el modal #2',
       },
     });
   }
