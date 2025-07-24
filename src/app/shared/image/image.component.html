@@ -1,0 +1,22 @@
+<div
+  class="p-1 rounded-border flex flex-col border border-surface items-center gap-4"
+>
+  <p-image
+    [alt]="alt()"
+    [src]="src()"
+    [width]="width()"
+    [height]="height()"
+    [preview]="preview()"
+    appendTo="body"
+    class="custon-image"
+  >
+    <ng-template #indicator>
+      <div class="flex gap-2">
+        <i class="pi pi-eye btn-indicator-1"></i>
+        @if (showRemove()) {
+        <i class="pi pi-trash btn-indicator-2" (click)="remove($event)"></i>
+        }
+      </div>
+    </ng-template>
+  </p-image>
+</div>

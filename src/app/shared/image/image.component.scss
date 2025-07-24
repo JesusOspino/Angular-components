@@ -1,0 +1,12 @@
+:host ::ng-deep .p-image-preview {
+  display: flex !important;
+}
+
+.btn-indicator-1,
+.btn-indicator-2 {
+  color: rgb(212, 212, 212);
+
+  &:hover {
+    color: white;
+  }
+}
