@@ -16,6 +16,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'tables',
+    loadComponent: () =>
+      import('./components/tables/tables.component').then(
+        (m) => m.TablesComponent
+      ),
+  },
+  {
     path: 'uploads',
     loadComponent: () =>
       import('./components/uploads/uploads.component').then(

@@ -40,6 +40,10 @@ export class AppComponent implements OnInit {
         route: '/editors',
       },
       {
+        label: 'Tablas',
+        route: '/tables',
+      },
+      {
         label: 'Uploads',
         route: '/uploads',
       },

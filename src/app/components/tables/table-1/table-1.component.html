@@ -1,0 +1,60 @@
+<div class="flex justify-center items-center p-4">
+  <h5 class="text-2xl text-blue-300">Tabla con paginación y estado global</h5>
+</div>
+
+<p-table
+  [value]="simpsonStore.simpsons()"
+  [paginator]="true"
+  [rows]="simpsonStore.parameters().pageSize"
+  (rowsChange)="onRowsChange($event)"
+  [rowsPerPageOptions]="[5, 10, 20]"
+  [totalRecords]="simpsonStore.simpsonRequest()?.totalDocs"
+  [lazy]="true"
+  (onPage)="onPageChange($event)"
+  [loading]="simpsonStore.isLoading()"
+  [showLoader]="false"
+>
+  <ng-template #header>
+    <tr>
+      <th style="width: 5rem">#</th>
+      <th style="width: 7rem">Imagen</th>
+      <th>Nombre</th>
+      <th>Ocupacion</th>
+      <th>Género</th>
+      <th>Estado</th>
+    </tr>
+  </ng-template>
+
+  <ng-template #body let-simpson let-index="rowIndex">
+    <tr>
+      <td>{{ index + 1 }}</td>
+      <td>
+        <app-image [src]="simpson.Imagen" alt="Imagen simpson" width="50" />
+      </td>
+      <td>{{ simpson.Nombre }}</td>
+      <td>{{ simpson.Ocupacion }}</td>
+      <td>{{ simpson.Genero }}</td>
+      <td>{{ simpson.Estado }}</td>
+    </tr>
+  </ng-template>
+
+  <ng-template #loadingbody let-columns="columns">
+    @for (item of [].constructor(simpsonStore.parameters().pageSize); track
+    $index) {
+    <tr style="height: 46px">
+      <td><p-skeleton class="w-full" /></td>
+      <td><p-skeleton class="w-full" /></td>
+      <td><p-skeleton class="w-full" /></td>
+      <td><p-skeleton class="w-full" /></td>
+      <td><p-skeleton class="w-full" /></td>
+      <td><p-skeleton class="w-full" /></td>
+    </tr>
+    }
+  </ng-template>
+
+  <ng-template #emptymessage>
+    <tr>
+      <td colspan="4">No se encontraron items</td>
+    </tr>
+  </ng-template>
+</p-table>
