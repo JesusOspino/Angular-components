@@ -32,12 +32,18 @@
   </ng-template>
 
   <ng-template #empty>
-    <div class="flex items-center justify-center flex-col">
+    <div
+      class="flex justify-center flex-col"
+      [ngClass]="[mode() === 'square' ? 'items-center' : 'items-start']"
+    >
+      @if (mode() === 'square') {
       <div
         class="flex justify-center items-center !border-2 !rounded-full w-[4rem] h-[4rem]"
       >
         <i class="pi pi-cloud-upload !text-3xl !text-muted-color"></i>
       </div>
+      }
+
       <p class="mt-3 mb-0">Arrastra y suelta tus imagenes aquí</p>
     </div>
   </ng-template>
@@ -48,16 +54,18 @@
       <div class="flex flex-wrap gap-4">
         @for (file of files; track $index) {
         <app-image
-          class="w-full"
+          [ngClass]="{
+            'w-full': mode() === 'large' && !deviceService.isMobile()
+          }"
           role="presentation"
           [alt]="file.name"
           [src]="file.objectURL"
           [width]="
-            imageMode() === 'square' || deviceService.isMobile() ? '100' : '60'
+            mode() === 'square' || deviceService.isMobile() ? '100' : '60'
           "
           [name]="file.name"
           [size]="file.size + ' bytes'"
-          [imageMode]="imageMode()"
+          [imageMode]="mode()"
           [preview]="true"
           [border]="true"
           [showRemove]="true"

@@ -7,6 +7,7 @@ import { CustomDialogService } from '../../common/services/custom-dialog.service
 import { Dialog3Component } from './dialog-3/dialog-3.component';
 import { Temporal } from '../../common/interfaces/temporal.interface';
 import { ConfigPageService } from 'src/app/common/services/config-page.service';
+import { DialogType } from 'src/app/common/enums/dialog-type.enum';
 
 @Component({
   selector: 'app-dialogs',
@@ -68,7 +69,7 @@ export class DialogsComponent implements OnInit {
         '640px': '90vw',
       },
       data: {
-        dialogType: 'create',
+        dialogType: DialogType.UPDATE,
         data: {
           name: 'Jesus',
           description: 'Estás en el modal personalizado #3',

@@ -1,4 +1,6 @@
+import { DialogType } from '../enums/dialog-type.enum';
+
 export interface DataType<T = any> {
-  dialogType: 'create' | 'update' | 'delete' | 'view';
+  dialogType: DialogType;
   data?: T;
 }

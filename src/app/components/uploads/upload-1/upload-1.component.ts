@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
@@ -6,12 +7,12 @@ import { ImageComponent } from 'src/app/shared/image/image.component';
 
 @Component({
   selector: 'app-upload-1',
-  imports: [FileUploadModule, ButtonModule, ImageComponent],
+  imports: [FileUploadModule, ButtonModule, ImageComponent, NgClass],
   templateUrl: './upload-1.component.html',
   styleUrl: './upload-1.component.scss',
 })
 export class Upload1Component {
-  imageMode = input<'square' | 'large'>('large');
+  mode = input<'square' | 'large'>('large');
 
   readonly deviceService = inject(DeviceService);
 

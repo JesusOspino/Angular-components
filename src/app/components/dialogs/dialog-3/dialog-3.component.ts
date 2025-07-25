@@ -1,12 +1,4 @@
-import {
-  Component,
-  computed,
-  effect,
-  inject,
-  linkedSignal,
-  OnInit,
-  signal,
-} from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { DataType } from '../../../common/interfaces/data-type.interface';
 import { Temporal } from '../../../common/interfaces/temporal.interface';
@@ -14,6 +6,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { DialogType } from 'src/app/common/enums/dialog-type.enum';
 
 @Component({
   selector: 'app-dialog-3',
@@ -29,21 +22,18 @@ export class Dialog3Component implements OnInit {
 
   private dataType = signal<DataType>(null);
 
-  dialogType = computed(() => this.dataType().dialogType);
-  configData = linkedSignal<Temporal>(() => this.dataType().data);
+  dialogType = computed<DialogType>(() => this.dataType().dialogType);
+  configData = computed<Temporal>(() => this.dataType().data);
 
   form: FormGroup;
 
   constructor() {
-    effect(() => {
-      const data = this.configData();
-      if (data) this.form.patchValue(data);
-    });
+    this.dataType.set(this.config.data);
   }
 
   ngOnInit() {
     this.formProperties();
-    this.dataType.set(this.config.data);
+    this.initializeForm();
   }
 
   formProperties() {
@@ -54,6 +44,13 @@ export class Dialog3Component implements OnInit {
         [RxwebValidators.required({ message: 'Es requerido!' })],
       ],
     });
+  }
+
+  initializeForm() {
+    if (this.dialogType() != DialogType.CREATE) {
+      const data = this.configData();
+      if (data) this.form.patchValue(data);
+    }
   }
 
   close(data?: any) {
