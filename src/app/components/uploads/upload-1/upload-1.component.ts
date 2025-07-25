@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
+import { DeviceService } from 'src/app/common/services/device.service';
 import { ImageComponent } from 'src/app/shared/image/image.component';
 
 @Component({
@@ -10,6 +11,10 @@ import { ImageComponent } from 'src/app/shared/image/image.component';
   styleUrl: './upload-1.component.scss',
 })
 export class Upload1Component {
+  imageMode = input<'square' | 'large'>('large');
+
+  readonly deviceService = inject(DeviceService);
+
   selectedFiles = signal<File[]>([]);
 
   /**

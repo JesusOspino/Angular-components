@@ -48,10 +48,16 @@
       <div class="flex flex-wrap gap-4">
         @for (file of files; track $index) {
         <app-image
+          class="w-full"
           role="presentation"
           [alt]="file.name"
           [src]="file.objectURL"
-          width="100"
+          [width]="
+            imageMode() === 'square' || deviceService.isMobile() ? '100' : '60'
+          "
+          [name]="file.name"
+          [size]="file.size + ' bytes'"
+          [imageMode]="imageMode()"
           [preview]="true"
           [border]="true"
           [showRemove]="true"

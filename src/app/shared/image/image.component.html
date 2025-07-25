@@ -1,3 +1,4 @@
+@if (imageMode() === 'square' || deviceService.isMobile()) {
 <div
   [ngClass]="{ 'p-1 border border-surface': border() }"
   class="rounded-border flex flex-col items-center gap-4 w-fit"
@@ -21,3 +22,44 @@
     </ng-template>
   </p-image>
 </div>
+} @else {
+<div class="flex justify-between items-center gap-3 rounded-sm w-full">
+  <div class="flex justify-center items-center gap-3">
+    <div
+      [ngClass]="{ 'p-1 border border-surface': border() }"
+      class="rounded-border flex flex-col items-center gap-4 w-fit"
+    >
+      <p-image
+        [alt]="alt()"
+        [src]="src()"
+        [width]="width()"
+        [height]="height()"
+        [preview]="preview()"
+        appendTo="body"
+        class="custon-image"
+      >
+        <ng-template #indicator>
+          <div class="flex gap-2">
+            <i class="pi pi-eye btn-indicator-1"></i>
+          </div>
+        </ng-template>
+      </p-image>
+    </div>
+
+    <div class="flex flex-col gap-1 items-start">
+      <span class="text-[16px]">{{ name() }}</span>
+      <span class="text-[16px]">{{ size() }}</span>
+    </div>
+  </div>
+
+  @if (showRemove()) {
+  <p-button
+    (onClick)="remove($event)"
+    icon="pi pi-trash"
+    [rounded]="true"
+    severity="danger"
+    [text]="true"
+  />
+  }
+</div>
+}

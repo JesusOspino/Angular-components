@@ -1,11 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { ConfigPageService } from 'src/app/common/services/config-page.service';
 import { Upload1Component } from './upload-1/upload-1.component';
-import { Upload2Component } from './upload-2/upload-2.component';
 
 @Component({
   selector: 'app-uploads',
-  imports: [Upload1Component, Upload2Component],
+  imports: [Upload1Component],
   templateUrl: './uploads.component.html',
   styleUrl: './uploads.component.scss',
 })
