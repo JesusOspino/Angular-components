@@ -1,0 +1,27 @@
+<div class="content" [ngClass]="styleClass()">
+  <!-- Header -->
+  @if (headerTemplate() || header()) {
+  <div class="content-header">
+    @if (headerTemplate()) {
+    <ng-container [ngTemplateOutlet]="headerTemplate()" />
+    } @else {
+    <h3>{{ header() }}</h3>
+    }
+  </div>
+  }
+
+  <!-- Body -->
+  <div class="content-body">
+    @if (bodyTemplate()) {
+    <ng-container [ngTemplateOutlet]="bodyTemplate()" />
+    }
+    <ng-content />
+  </div>
+
+  <!-- Footer -->
+  @if (footerTemplate()) {
+  <div class="content-footer">
+    <ng-container [ngTemplateOutlet]="footerTemplate()" />
+  </div>
+  }
+</div>

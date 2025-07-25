@@ -47,6 +47,10 @@ export class AppComponent implements OnInit {
         label: 'Uploads',
         route: '/uploads',
       },
+      {
+        label: 'Vistas',
+        route: '/views',
+      },
     ]);
 
     this.router.events.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({

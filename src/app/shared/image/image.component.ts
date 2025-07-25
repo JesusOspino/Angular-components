@@ -1,9 +1,10 @@
+import { NgClass } from '@angular/common';
 import { Component, input, output } from '@angular/core';
 import { ImageModule } from 'primeng/image';
 
 @Component({
   selector: 'app-image',
-  imports: [ImageModule],
+  imports: [ImageModule, NgClass],
   templateUrl: './image.component.html',
   styleUrl: './image.component.scss',
 })
@@ -14,6 +15,7 @@ export class ImageComponent {
   alt = input<string>();
   preview = input<boolean>(false);
   showRemove = input<boolean>(false);
+  border = input<boolean>(false);
 
   onRemove = output<Event>();
 

@@ -30,6 +30,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'views',
+    loadComponent: () =>
+      import('./components/views/views.component').then(
+        (m) => m.ViewsComponent
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'dialogs',
   },

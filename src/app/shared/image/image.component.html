@@ -1,5 +1,6 @@
 <div
-  class="p-1 rounded-border flex flex-col border border-surface items-center gap-4"
+  [ngClass]="{ 'p-1 border border-surface': border() }"
+  class="rounded-border flex flex-col items-center gap-4 w-fit"
 >
   <p-image
     [alt]="alt()"

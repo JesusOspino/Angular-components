@@ -17,11 +17,12 @@
   <ng-template #header>
     <tr>
       <th style="width: 5rem">#</th>
-      <th style="width: 7rem">Imagen</th>
-      <th>Nombre</th>
-      <th>Ocupacion</th>
-      <th>Género</th>
-      <th>Estado</th>
+      <th style="width: 3rem">Imagen</th>
+      <th style="width: 5rem">Nombre</th>
+      <th style="width: 10rem">Ocupacion</th>
+      <th>Historia</th>
+      <th style="width: 5rem">Género</th>
+      <th style="width: 5rem">Estado</th>
     </tr>
   </ng-template>
 
@@ -29,10 +30,16 @@
     <tr>
       <td>{{ index + 1 }}</td>
       <td>
-        <app-image [src]="simpson.Imagen" alt="Imagen simpson" width="50" />
+        <app-image
+          [src]="simpson.Imagen"
+          alt="Imagen simpson"
+          width="30"
+          [preview]="true"
+        />
       </td>
       <td>{{ simpson.Nombre }}</td>
       <td>{{ simpson.Ocupacion }}</td>
+      <td>{{ simpson.Historia }}</td>
       <td>{{ simpson.Genero }}</td>
       <td>{{ simpson.Estado }}</td>
     </tr>
@@ -42,6 +49,7 @@
     @for (item of [].constructor(simpsonStore.parameters().pageSize); track
     $index) {
     <tr style="height: 46px">
+      <td><p-skeleton class="w-full" /></td>
       <td><p-skeleton class="w-full" /></td>
       <td><p-skeleton class="w-full" /></td>
       <td><p-skeleton class="w-full" /></td>

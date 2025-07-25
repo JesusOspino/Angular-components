@@ -1,0 +1,22 @@
+<app-content header="hola" styleClass="h-full">
+  <!-- Header personalizado -->
+  <ng-template #header>
+    <div class="flex justify-end items-center">
+      <h3>Título personalizado</h3>
+    </div>
+  </ng-template>
+
+  <!-- Body personalizado -->
+  <ng-template #body>
+    <p>Contenido personalizado usando ng-template</p>
+    <p>Con las últimas características de Angular</p>
+  </ng-template>
+
+  <!-- Footer personalizado -->
+  <ng-template #footer>
+    <div style="display: flex; justify-content: flex-end; gap: 8px">
+      <button mat-button>Cancelar</button>
+      <button mat-button color="primary">Aceptar</button>
+    </div>
+  </ng-template>
+</app-content>
