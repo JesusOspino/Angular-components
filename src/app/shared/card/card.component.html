@@ -1,0 +1,47 @@
+<div
+  class="card"
+  [ngClass]="[styleClass(), type() === 'dialog' ? 'card-dialog' : '']"
+>
+  <!-- Header -->
+  @if (headerTemplate()) {
+  <div class="card-header" [ngClass]="styleHeader()">
+    <ng-container [ngTemplateOutlet]="headerTemplate()" />
+  </div>
+  }
+
+  <!-- Body -->
+  <div class="card-body" [ngClass]="styleBody()">
+    @if (bodyTemplate()) {
+    <ng-container [ngTemplateOutlet]="bodyTemplate()" />
+    }
+    <ng-content />
+  </div>
+
+  <!-- Footer -->
+  @if (footerTemplate() || showButtonConfirm() || showButtonCancel()) {
+  <div class="card-footer" [ngClass]="styleFooter()">
+    @if (footerTemplate()) {
+    <ng-container [ngTemplateOutlet]="footerTemplate()" />
+    } @else {
+    <div class="flex justify-end items-center gap-3 w-full">
+      @if (showButtonCancel()) {
+      <p-button
+        (onClick)="cancel($event)"
+        icon="pi pi-times"
+        label="Cancelar"
+        [outlined]="true"
+        severity="danger"
+      />
+      } @if (showButtonConfirm()) {
+      <p-button
+        (onClick)="confirm($event)"
+        icon="pi pi-check"
+        label="Aceptar"
+        severity="primary"
+      />
+      }
+    </div>
+    }
+  </div>
+  }
+</div>

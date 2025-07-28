@@ -1,0 +1,48 @@
+<app-card
+  type="dialog"
+  (onConfirm)="submit()"
+  (onCancel)="close()"
+  [showButtonConfirm]="true"
+  [showButtonCancel]="true"
+>
+  <form
+    class="grid grid-cols-2 gap-4 w-full"
+    [formGroup]="form"
+    (ngSubmit)="submit()"
+  >
+    <div class="flex flex-col gap-1 col-span-2">
+      <label
+        for="name"
+        class="text-sm font-medium leading-6 text-gray-500 required"
+        >Nombre</label
+      >
+      <input id="name" type="text" pInputText formControlName="name" />
+      @if (form.controls['name'].errors && form.controls['name'].dirty){
+      <small class="text-red-500">
+        {{ form.controls["name"].errors["required"]?.message }}
+      </small>
+      }
+    </div>
+
+    <div class="flex flex-col gap-1 col-span-2">
+      <label
+        for="description"
+        class="text-sm font-medium leading-6 text-gray-500"
+        >Descripción</label
+      >
+      <textarea
+        id="description"
+        rows="3"
+        pTextarea
+        [autoResize]="true"
+        formControlName="description"
+      ></textarea>
+      @if (form.controls['description'].errors &&
+      form.controls['description'].dirty){
+      <small class="text-red-500">
+        {{ form.controls["description"].errors["required"]?.message }}
+      </small>
+      }
+    </div>
+  </form>
+</app-card>

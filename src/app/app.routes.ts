@@ -2,6 +2,13 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
+    path: 'cards',
+    loadComponent: () =>
+      import('./components/cards/cards.component').then(
+        (m) => m.CardsComponent
+      ),
+  },
+  {
     path: 'dialogs',
     loadComponent: () =>
       import('./components/dialogs/dialogs.component').then(

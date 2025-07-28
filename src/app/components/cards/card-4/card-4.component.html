@@ -1,0 +1,25 @@
+<app-card styleHeader="!p-0">
+  <ng-template #header>
+    <div class="w-full h-52">
+      <img
+        src="https://www.saborusa.com/wp-content/uploads/2021/02/Bandeja-paisa-con-arroz-fr%C3%ADjoles-chorizo-huevo-frito-chicharr%C3%B3n-arepa-pl%C3%A1tano-maduro-aguacate-y-morcilla-en-plato-de-barro.webp"
+        alt="icono de la app"
+        class="w-full h-full"
+      />
+    </div>
+  </ng-template>
+
+  <ng-template #body>
+    <h5 class="text-xl text-blue-500">Bandeja paisa</h5>
+    <p class="text-gray-400 text-sm">
+      Excelente plato con gran variada de sabores y muy rico
+    </p>
+  </ng-template>
+
+  <!-- Footer personalizado -->
+  <ng-template #footer>
+    <div class="flex justify-end items-center gap-3">
+      <p-button icon="pi pi-cart-plus" severity="primary" />
+    </div>
+  </ng-template>
+</app-card>

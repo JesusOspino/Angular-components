@@ -32,6 +32,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.tabs.set([
       {
+        label: 'Tarjatas',
+        route: '/cards',
+      },
+      {
         label: 'Dialogos',
         route: '/dialogs',
       },
