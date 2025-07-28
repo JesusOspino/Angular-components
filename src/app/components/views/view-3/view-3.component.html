@@ -16,9 +16,21 @@
 
   <!-- Footer personalizado -->
   <ng-template #footer>
-    <div style="display: flex; justify-content: flex-end; gap: 8px">
-      <button mat-button>Cancelar</button>
-      <button mat-button color="primary">Aceptar</button>
+    <div class="flex justify-end items-center gap-3">
+      <p-button
+        (onClick)="cancel()"
+        icon="pi pi-times"
+        label="Cancelar"
+        [outlined]="true"
+        severity="danger"
+      />
+
+      <p-button
+        (onClick)="accept()"
+        icon="pi pi-check"
+        label="Aceptar"
+        severity="primary"
+      />
     </div>
   </ng-template>
 </app-content>
