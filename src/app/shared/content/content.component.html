@@ -5,7 +5,17 @@
     @if (headerTemplate()) {
     <ng-container [ngTemplateOutlet]="headerTemplate()" />
     } @else {
-    <h3>{{ header() }}</h3>
+    <h3 class="text-xl font-bold">{{ header() }}</h3>
+    } @if (closable()) {
+    <div class="flex justify-end items-center gap-2 w-fit">
+      <p-button
+        (onClick)="close($event)"
+        icon="pi pi-times"
+        severity="secondary"
+        [text]="true"
+        size="small"
+      />
+    </div>
     }
   </div>
   }

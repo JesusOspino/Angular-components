@@ -1,9 +1,9 @@
 .content {
-  @apply border border-solid border-[#ddd] rounded-md overflow-hidden flex flex-col min-h-32;
+  @apply border border-solid border-[#ddd] rounded-md overflow-hidden flex flex-col min-h-24;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   .content-header {
-    @apply p-4 flex-shrink-0;
+    @apply p-4 flex-shrink-0 flex justify-between items-center gap-3;
   }
 
   .content-body {

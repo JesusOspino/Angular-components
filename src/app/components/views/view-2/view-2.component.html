@@ -1,4 +1,12 @@
-<app-content header="Titulo nativo" styleClass="h-full" [closable]="true">
+<app-content styleClass="h-full" [closable]="true">
+  <!-- Header personalizado -->
+  <ng-template #header>
+    <div class="flex justify-start items-center gap-3">
+      <img src="icon.png" alt="icono de la app" width="30" />
+      <h1 class="text-xl">Titulo personalizado</h1>
+    </div>
+  </ng-template>
+
   <!-- Body personalizado -->
   <ng-template #body>
     <p>Contenido personalizado usando ng-template</p>
