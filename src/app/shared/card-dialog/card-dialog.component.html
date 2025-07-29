@@ -1,16 +1,13 @@
-<div
-  class="card"
-  [ngClass]="[styleClass(), type() === 'dialog' ? 'card-dialog' : '']"
->
+<div class="card-dialog">
   <!-- Header -->
   @if (headerTemplate()) {
-  <div class="card-header" [ngClass]="styleHeader()">
+  <div class="card-dialog-header" [ngClass]="styleHeader()">
     <ng-container [ngTemplateOutlet]="headerTemplate()" />
   </div>
   }
 
   <!-- Body -->
-  <div class="card-body" [ngClass]="styleBody()">
+  <div class="card-dialog-body" [ngClass]="styleBody()">
     @if (bodyTemplate()) {
     <ng-container [ngTemplateOutlet]="bodyTemplate()" />
     }
@@ -19,7 +16,7 @@
 
   <!-- Footer -->
   @if (footerTemplate() || showButtonConfirm() || showButtonCancel()) {
-  <div class="card-footer" [ngClass]="styleFooter()">
+  <div class="card-dialog-footer" [ngClass]="styleFooter()">
     @if (footerTemplate()) {
     <ng-container [ngTemplateOutlet]="footerTemplate()" />
     } @else {

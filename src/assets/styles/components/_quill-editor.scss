@@ -1,0 +1,9 @@
+.ql-container,
+.ql-snow,
+.ql-toolbar {
+  @apply dark:!border-[#3f3f46];
+
+  /*   &:focus-within {
+    @apply border !border-primary;
+  } */
+}

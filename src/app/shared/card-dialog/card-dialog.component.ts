@@ -9,19 +9,18 @@ import {
 import { ButtonModule } from 'primeng/button';
 
 @Component({
-  selector: 'app-card',
+  selector: 'app-card-dialog',
   imports: [ButtonModule, NgClass, NgTemplateOutlet],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.scss',
+  templateUrl: './card-dialog.component.html',
+  styleUrl: './card-dialog.component.scss',
 })
-export class CardComponent {
+export class CardDialogComponent {
   // Inputs con signals
-  type = input<'card' | 'dialog'>('card');
   showButtonConfirm = input<boolean>(false);
   showButtonCancel = input<boolean>(false);
   labelConfirm = input<string>('Aceptar');
   labelCancel = input<string>('Cancelar');
-  
+
   styleClass = input<string>('');
   styleHeader = input<string>('');
   styleBody = input<string>('');

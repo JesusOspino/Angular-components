@@ -1,10 +1,32 @@
-<app-card type="card">
+<p-card>
   <ng-template #header>
+    <div class="w-full h-28">
+      <img
+        src="https://www.saborusa.com/wp-content/uploads/2021/02/Bandeja-paisa-con-arroz-fr%C3%ADjoles-chorizo-huevo-frito-chicharr%C3%B3n-arepa-pl%C3%A1tano-maduro-aguacate-y-morcilla-en-plato-de-barro.webp"
+        alt="icono de la app"
+        class="w-full h-full rounded-t-md"
+      />
+    </div>
+  </ng-template>
+
+  <ng-template #title>
     <div class="flex justify-start items-center gap-2 w-full">
       <img src="icon.png" alt="icono de la app" width="25" />
       <h1 class="text-xl font-semibold">Card #1</h1>
     </div>
   </ng-template>
 
-  <h5 class="text-xl text-gray-500">Contendio de la tarjeta #1</h5>
-</app-card>
+  <ng-template #subtitle>
+      <h1 class="text-sm font-semibold">Subtitle #1</h1>
+  </ng-template>
+
+  <ng-template #content>
+    <h5 class="text-xl text-gray-500">Contendio de la tarjeta #1</h5>
+  </ng-template>
+
+  <ng-template #footer>
+    <div class="flex justify-end items-center gap-3">
+      <p-button icon="pi pi-cart-plus" severity="primary" />
+    </div>
+  </ng-template>
+</p-card>

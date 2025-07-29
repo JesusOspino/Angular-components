@@ -8,12 +8,12 @@ import { DialogType } from 'src/app/common/enums/dialog-type.enum';
 import { errorMessage } from 'src/app/common/helpers/message.helper';
 import { DataType } from 'src/app/common/interfaces/data-type.interface';
 import { Temporal } from 'src/app/common/interfaces/temporal.interface';
-import { CardComponent } from 'src/app/shared/card/card.component';
+import { CardDialogComponent } from 'src/app/shared/card-dialog/card-dialog.component';
 
 @Component({
   selector: 'app-card-2',
   imports: [
-    CardComponent,
+    CardDialogComponent,
     InputTextModule,
     TextareaModule,
     ReactiveFormsModule,

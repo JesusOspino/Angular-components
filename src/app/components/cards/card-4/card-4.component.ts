@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
-import { CardComponent } from 'src/app/shared/card/card.component';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-card-4',
-  imports: [CardComponent, ButtonModule],
+  imports: [CardModule],
   templateUrl: './card-4.component.html',
   styleUrl: './card-4.component.scss',
 })

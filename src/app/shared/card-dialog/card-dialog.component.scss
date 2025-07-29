@@ -1,0 +1,15 @@
+.card-dialog {
+  @apply rounded-md overflow-hidden flex flex-col;
+
+  .card-dialog-header {
+    @apply pb-4 flex-shrink-0 flex justify-between items-center gap-3;
+  }
+
+  .card-dialog-body {
+    @apply flex-grow overflow-y-auto;
+  }
+
+  .card-dialog-footer {
+    @apply pt-4 flex-shrink-0;
+  }
+}
