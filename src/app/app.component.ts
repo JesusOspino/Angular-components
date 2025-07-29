@@ -32,10 +32,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.tabs.set([
       {
-        label: 'Tarjatas',
-        route: '/cards',
-      },
-      {
         label: 'Dialogos',
         route: '/dialogs',
       },
@@ -46,6 +42,10 @@ export class AppComponent implements OnInit {
       {
         label: 'Tablas',
         route: '/tables',
+      },
+      {
+        label: 'Tarjetas',
+        route: '/cards',
       },
       {
         label: 'Uploads',

@@ -37,7 +37,7 @@ export class CardsComponent {
   open(): void {
     const ref = this.customDialogService.open<Temporal>(Card2Component, {
       header: 'Modal con tarjeta',
-      width: '50%',
+      width: '450px',
       maximizable: true,
       breakpoints: {
         '960px': '75vw',

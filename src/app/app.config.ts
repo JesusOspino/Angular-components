@@ -13,6 +13,7 @@ import {
   DynamicDialogConfig,
   DynamicDialogRef,
 } from 'primeng/dynamicdialog';
+import { translation } from './common/helpers/translation.helper';
 
 const modulesImports = [CustomDialogService];
 
@@ -37,6 +38,7 @@ export const appConfig: ApplicationConfig = {
           darkModeSelector: '.p-dark',
         },
       },
+      translation: translation,
     }),
     ...modulesImports,
     ...primengImports,
