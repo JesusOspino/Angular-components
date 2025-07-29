@@ -1,5 +1,5 @@
 .content {
-  @apply border border-solid border-[#ddd] rounded-md overflow-hidden flex flex-col min-h-24;
+  @apply border border-solid border-[#ddd] dark:border-[#3f3f46] rounded-md overflow-hidden flex flex-col min-h-24;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   .content-header {
