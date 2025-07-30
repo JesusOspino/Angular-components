@@ -2,28 +2,22 @@
   <h5 class="text-2xl text-blue-300">Editor con imagenes</h5>
 </div>
 
-<quill-editor
-  class="w-full"
-  [(ngModel)]="text"
-  [modules]="configToolbar"
-  [styles]="{ height: '300px' }"
-  #editor
-></quill-editor>
+<app-editor [(ngModel)]="value" />
 
 <br />
 
 <div class="grid grid-cols-2 gap-4 mt-4">
   <quill-view-html
-    [content]="text()"
+    [content]="value()"
     theme="snow"
     [sanitize]="true"
-    class="ql-editor border border-solid border-gray-300"
+    class="ql-editor border border-solid border-gray-300 dark:!border-[#3f3f46]"
   />
 
   <quill-view
-    [content]="text()"
+    [content]="value()"
     theme="snow"
     [sanitize]="true"
-    class="ql-editor border border-solid border-gray-300"
+    class="ql-editor border border-solid border-gray-300 dark:!border-[#3f3f46]"
   />
 </div>

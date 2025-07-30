@@ -1,0 +1,10 @@
+<quill-editor
+  #quillEditor
+  class="w-full"
+  [(ngModel)]="textValue"
+  [modules]="configToolbar"
+  [styles]="{ height: heigth() }"
+  [disabled]="disabled()"
+  [placeholder]="placeholder()"
+  (onBlur)="onBlur()"
+></quill-editor>
