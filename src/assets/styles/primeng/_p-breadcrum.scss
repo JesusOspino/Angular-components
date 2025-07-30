@@ -1,0 +1,17 @@
+.p-breadcrumb {
+  @apply p-4;
+
+  .p-breadcrumb-item-link {
+    @apply text-[13px];
+  }
+
+  .p-breadcrumb-item-icon {
+    @apply text-[13px];
+  }
+
+  .p-iconwrapper {
+    .p-icon {
+      @apply w-[13px] h-[13px];
+    }
+  }
+}

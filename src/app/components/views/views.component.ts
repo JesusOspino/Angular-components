@@ -25,7 +25,7 @@ export class ViewsComponent {
     );
     this.configPageService.setBreadcrumbItems([
       { label: 'Components' },
-      { label: 'Vistas' },
+      { label: 'Vistas', routerLink: '/views' },
     ]);
   }
 }

@@ -1,4 +1,10 @@
-<app-content header="Titulo nativo" styleClass="h-full" [closable]="true">
+<app-content
+  header="Titulo nativo"
+  styleClass="h-full"
+  [closable]="true"
+  [showBreadcrumb]="true"
+  [cardMode]="true"
+>
   <!-- Body personalizado -->
   <ng-template #body>
     <p>Contenido personalizado usando ng-template</p>

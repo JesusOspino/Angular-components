@@ -1,39 +1,55 @@
 <div class="content" [ngClass]="styleClass()">
-  <!-- Header -->
-  @if (headerTemplate() || header()) {
-  <div class="content-header">
-    @if (headerTemplate()) {
-    <ng-container [ngTemplateOutlet]="headerTemplate()" />
-    } @else {
-    <h3 class="text-xl font-semibold text-gray-500 dark:text-white">{{ header() }}</h3>
-    } @if (closable()) {
-    <div class="flex justify-end items-center gap-2 w-fit">
-      @if (closable()) {
-      <p-button
-        (onClick)="close($event)"
-        icon="pi pi-times"
-        severity="secondary"
-        [text]="true"
-        size="small"
-      />
+  <!-- Breadcrumb -->
+  @if (showBreadcrumb()) {
+  <div class="w-full">
+    <p-breadcrumb
+      [home]="home()"
+      [model]="breadcrumbItems()"
+      styleClass="p-4"
+      [styleClass]="!cardMode() ? '!py-2' : ''"
+    />
+  </div>
+  }
+
+  <div class="content-wrapper" [ngClass]="{ 'card-mode': cardMode() }">
+    <!-- Header -->
+    @if (headerTemplate() || header()) {
+    <div class="content-header" [ngClass]="{ '!pt-2': !cardMode() }">
+      @if (headerTemplate()) {
+      <ng-container [ngTemplateOutlet]="headerTemplate()" />
+      } @else {
+      <h3 class="text-xl font-semibold text-gray-500 dark:text-white">
+        {{ header() }}
+      </h3>
+      } @if (closable()) {
+      <div class="flex justify-end items-center gap-2 w-fit">
+        @if (closable()) {
+        <p-button
+          (onClick)="close($event)"
+          icon="pi pi-times"
+          severity="secondary"
+          [text]="true"
+          size="small"
+        />
+        }
+      </div>
       }
     </div>
     }
-  </div>
-  }
 
-  <!-- Body -->
-  <div class="content-body">
-    @if (bodyTemplate()) {
-    <ng-container [ngTemplateOutlet]="bodyTemplate()" />
+    <!-- Body -->
+    <div class="content-body">
+      @if (bodyTemplate()) {
+      <ng-container [ngTemplateOutlet]="bodyTemplate()" />
+      }
+      <ng-content />
+    </div>
+
+    <!-- Footer -->
+    @if (footerTemplate()) {
+    <div class="content-footer">
+      <ng-container [ngTemplateOutlet]="footerTemplate()" />
+    </div>
     }
-    <ng-content />
   </div>
-
-  <!-- Footer -->
-  @if (footerTemplate()) {
-  <div class="content-footer">
-    <ng-container [ngTemplateOutlet]="footerTemplate()" />
-  </div>
-  }
 </div>
