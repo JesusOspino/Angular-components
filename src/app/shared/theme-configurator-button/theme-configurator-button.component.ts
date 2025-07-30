@@ -1,12 +1,11 @@
 import { NgStyle } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ColorPalette } from '@interfaces/theme.interface';
+import { ThemeService } from '@services/theme.service';
 import { PrimeNG } from 'primeng/config';
 import { StyleClassModule } from 'primeng/styleclass';
 import { ToggleSwitchModule } from 'primeng/toggleswitch';
-
-import { ThemeService } from '../../common/services/theme.service';
-import { ColorPalette } from '../../common/interfaces/theme.interface';
 
 @Component({
   selector: 'app-theme-configurator-button',

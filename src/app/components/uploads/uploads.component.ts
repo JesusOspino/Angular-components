@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { ConfigPageService } from 'src/app/common/services/config-page.service';
 import { Upload1Component } from './upload-1/upload-1.component';
+import { ConfigPageService } from '@services/config-page.service';
 
 @Component({
   selector: 'app-uploads',

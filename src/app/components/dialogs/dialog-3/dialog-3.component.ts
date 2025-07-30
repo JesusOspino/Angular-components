@@ -1,12 +1,12 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { DataType } from '../../../common/interfaces/data-type.interface';
-import { Temporal } from '../../../common/interfaces/temporal.interface';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { DialogType } from 'src/app/common/enums/dialog-type.enum';
+import { DataType } from '@interfaces/data-type.interface';
+import { DialogType } from '@enums/dialog-type.enum';
+import { Temporal } from '@interfaces/temporal.interface';
 
 @Component({
   selector: 'app-dialog-3',

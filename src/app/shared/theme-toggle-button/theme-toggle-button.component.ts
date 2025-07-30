@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
-import { ThemeService } from '../../common/services/theme.service';
+import { ThemeService } from '@services/theme.service';
 
 @Component({
   selector: 'app-theme-toggle-button',

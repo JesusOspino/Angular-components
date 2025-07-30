@@ -1,4 +1,4 @@
-import { DialogType } from '../enums/dialog-type.enum';
+import { DialogType } from "@enums/dialog-type.enum";
 
 export interface DataType<T = any> {
   dialogType: DialogType;

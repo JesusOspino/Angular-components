@@ -1,9 +1,9 @@
 import { NgClass } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
+import { DeviceService } from '@services/device.service';
+import { ImageComponent } from '@shared/image/image.component';
 import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
-import { DeviceService } from 'src/app/common/services/device.service';
-import { ImageComponent } from 'src/app/shared/image/image.component';
 
 @Component({
   selector: 'app-upload-1',

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Table1Component } from './table-1/table-1.component';
-import { ConfigPageService } from 'src/app/common/services/config-page.service';
+import { ConfigPageService } from '@services/config-page.service';
 
 @Component({
   selector: 'app-tables',

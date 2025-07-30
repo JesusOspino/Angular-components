@@ -7,8 +7,8 @@ import {
 } from '@angular/router';
 import { TabsModule } from 'primeng/tabs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ThemeToggleButtonComponent } from './shared/theme-toggle-button/theme-toggle-button.component';
-import { ThemeConfiguratorButtonComponent } from './shared/theme-configurator-button/theme-configurator-button.component';
+import { ThemeToggleButtonComponent } from '@shared/theme-toggle-button/theme-toggle-button.component';
+import { ThemeConfiguratorButtonComponent } from '@shared/theme-configurator-button/theme-configurator-button.component';
 
 @Component({
   selector: 'app-root',

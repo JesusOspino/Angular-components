@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { SimpsonStore } from 'src/app/common/store/simpson.store';
 import { TableModule, TablePageEvent } from 'primeng/table';
 import { SkeletonModule } from 'primeng/skeleton';
-import { ImageComponent } from 'src/app/shared/image/image.component';
+import { ImageComponent } from '@shared/image/image.component';
+import { SimpsonStore } from '@store/simpson.store';
 
 @Component({
   selector: 'app-table-1',

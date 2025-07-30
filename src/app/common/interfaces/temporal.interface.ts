@@ -1,4 +1,4 @@
-export interface Temporal<T = any> {
+export interface Temporal {
   name: string;
   description?: string;
 }

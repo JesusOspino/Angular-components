@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { ContentComponent } from '@shared/content/content.component';
 import { ButtonModule } from 'primeng/button';
-import { ContentComponent } from 'src/app/shared/content/content.component';
 
 @Component({
   selector: 'app-view-3',

@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { environment } from '@environments/environment';
+import { Parameter } from '@interfaces/parameter.interface';
+import { SimpsonRequest } from '@interfaces/simpson.interface';
 import { delay, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { SimpsonRequest } from '../../interfaces/simpson.interface';
-import { Parameter } from '../../interfaces/parameter.interface';
 
 @Injectable({
   providedIn: 'root',

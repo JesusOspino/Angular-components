@@ -14,8 +14,8 @@ import {
   FormsModule,
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
+import { FileService } from '@services/http-services/file.service';
 import { QuillEditorComponent, QuillModule } from 'ngx-quill';
-import { FileService } from 'src/app/common/services/http-services/file.service';
 
 const VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,

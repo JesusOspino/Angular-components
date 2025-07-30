@@ -1,14 +1,14 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { DialogType } from '@enums/dialog-type.enum';
+import { errorMessage } from '@helpers/message.helper';
+import { DataType } from '@interfaces/data-type.interface';
+import { Temporal } from '@interfaces/temporal.interface';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
+import { CardDialogComponent } from '@shared/card-dialog/card-dialog.component';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { TextareaModule } from 'primeng/textarea';
-import { DialogType } from 'src/app/common/enums/dialog-type.enum';
-import { errorMessage } from 'src/app/common/helpers/message.helper';
-import { DataType } from 'src/app/common/interfaces/data-type.interface';
-import { Temporal } from 'src/app/common/interfaces/temporal.interface';
-import { CardDialogComponent } from 'src/app/shared/card-dialog/card-dialog.component';
 
 @Component({
   selector: 'app-card-2',

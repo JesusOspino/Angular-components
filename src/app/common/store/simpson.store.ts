@@ -1,10 +1,10 @@
 import { computed, inject, Injectable } from '@angular/core';
+import { Parameter } from '@interfaces/parameter.interface';
+import { Simpson, SimpsonRequest } from '@interfaces/simpson.interface';
 import { patchState, signalState } from '@ngrx/signals';
-import { Simpson, SimpsonRequest } from '../interfaces/simpson.interface';
-import { SimpsonService } from '../services/http-services/simpson.service';
+import { CustomMessageService } from '@services/custom-message.service';
+import { SimpsonService } from '@services/http-services/simpson.service';
 import { firstValueFrom } from 'rxjs';
-import { Parameter } from '../interfaces/parameter.interface';
-import { CustomMessageService } from '../services/custom-message.service';
 
 type SimpsonState = {
   simpsons: Simpson[];

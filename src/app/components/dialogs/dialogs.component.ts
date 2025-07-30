@@ -1,13 +1,13 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { Dialog1Component } from './dialog-1/dialog-1.component';
-import { Dialog2Component } from './dialog-2/dialog-2.component';
 import { DialogService } from 'primeng/dynamicdialog';
-import { CustomDialogService } from '../../common/services/custom-dialog.service';
+import { Dialog1Component } from './dialog-1/dialog-1.component';
+import { CustomDialogService } from '@services/custom-dialog.service';
+import { ConfigPageService } from '@services/config-page.service';
+import { Temporal } from '@interfaces/temporal.interface';
 import { Dialog3Component } from './dialog-3/dialog-3.component';
-import { Temporal } from '../../common/interfaces/temporal.interface';
-import { ConfigPageService } from 'src/app/common/services/config-page.service';
-import { DialogType } from 'src/app/common/enums/dialog-type.enum';
+import { DialogType } from '@enums/dialog-type.enum';
+import { Dialog2Component } from './dialog-2/dialog-2.component';
 
 @Component({
   selector: 'app-dialogs',

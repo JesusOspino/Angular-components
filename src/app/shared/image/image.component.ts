@@ -1,16 +1,8 @@
 import { NgClass } from '@angular/common';
-import {
-  Component,
-  computed,
-  HostListener,
-  inject,
-  input,
-  output,
-  signal,
-} from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
+import { DeviceService } from '@services/device.service';
 import { ButtonModule } from 'primeng/button';
 import { ImageModule } from 'primeng/image';
-import { DeviceService } from 'src/app/common/services/device.service';
 
 @Component({
   selector: 'app-image',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContentComponent } from 'src/app/shared/content/content.component';
+import { ContentComponent } from '@shared/content/content.component';
 
 @Component({
   selector: 'app-view-1',

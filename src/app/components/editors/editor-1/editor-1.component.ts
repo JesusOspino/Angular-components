@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { EditorComponent } from '@shared/editor/editor.component';
 import { QuillModule } from 'ngx-quill';
-import { EditorComponent } from 'src/app/shared/editor/editor.component';
 
 @Component({
   selector: 'app-editor-1',

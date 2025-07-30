@@ -6,11 +6,11 @@ import {
   PLATFORM_ID,
   signal,
 } from '@angular/core';
-import { ColorPalette, Theme } from '../interfaces/theme.interface';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { PrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { updatePreset } from '@primeng/themes';
+import { ColorPalette, Theme } from '@interfaces/theme.interface';
 
 const DEFAULT_THEME: Theme = {
   primary: 'blue',

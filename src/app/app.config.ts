@@ -1,19 +1,19 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import Aura from '@primeng/themes/aura';
-
-import { routes } from './app.routes';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { providePrimeNG } from 'primeng/config';
-import { provideHttpClient } from '@angular/common/http';
-import { CustomDialogService } from './common/services/custom-dialog.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { CustomDialogService } from './common/services/custom-dialog.service';
 import {
   DialogService,
   DynamicDialogConfig,
   DynamicDialogRef,
 } from 'primeng/dynamicdialog';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+import { providePrimeNG } from 'primeng/config';
 import { translation } from './common/helpers/translation.helper';
+import { routes } from './app.routes';
+
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import Aura from '@primeng/themes/aura';
 
 const modulesImports = [CustomDialogService];
 

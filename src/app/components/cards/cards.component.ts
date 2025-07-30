@@ -1,13 +1,13 @@
 import { Component, inject } from '@angular/core';
-import { Card1Component } from './card-1/card-1.component';
-import { ConfigPageService } from 'src/app/common/services/config-page.service';
-import { Card2Component } from './card-2/card-2.component';
-import { CustomDialogService } from 'src/app/common/services/custom-dialog.service';
-import { Temporal } from 'src/app/common/interfaces/temporal.interface';
-import { DialogType } from 'src/app/common/enums/dialog-type.enum';
 import { ButtonModule } from 'primeng/button';
+import { Card1Component } from './card-1/card-1.component';
 import { Card3Component } from './card-3/card-3.component';
 import { Card4Component } from './card-4/card-4.component';
+import { ConfigPageService } from '@services/config-page.service';
+import { CustomDialogService } from '@services/custom-dialog.service';
+import { Temporal } from '@interfaces/temporal.interface';
+import { Card2Component } from './card-2/card-2.component';
+import { DialogType } from '@enums/dialog-type.enum';
 
 @Component({
   selector: 'app-cards',

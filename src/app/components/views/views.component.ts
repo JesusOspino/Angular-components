@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { View1Component } from './view-1/view-1.component';
-import { ConfigPageService } from 'src/app/common/services/config-page.service';
 import { View2Component } from './view-2/view-2.component';
 import { View3Component } from './view-3/view-3.component';
 import { View4Component } from './view-4/view-4.component';
+import { ConfigPageService } from '@services/config-page.service';
 
 @Component({
   selector: 'app-views',

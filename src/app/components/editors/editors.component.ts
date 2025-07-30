@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
+import { ConfigPageService } from '@services/config-page.service';
 import { Editor1Component } from './editor-1/editor-1.component';
-import { ConfigPageService } from 'src/app/common/services/config-page.service';
 
 @Component({
   selector: 'app-editors',

@@ -1,6 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
-import { Storage } from '../enums/storage.enum';
+import { Storage } from '@enums/storage.enum';
 
 @Injectable({
   providedIn: 'root',
