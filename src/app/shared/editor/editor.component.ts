@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import {
   Component,
   effect,
@@ -24,7 +25,7 @@ const VALUE_ACCESSOR = {
 
 @Component({
   selector: 'app-editor',
-  imports: [FormsModule, QuillModule],
+  imports: [FormsModule, QuillModule, NgClass],
   templateUrl: './editor.component.html',
   styleUrl: './editor.component.scss',
   providers: [VALUE_ACCESSOR],
@@ -34,12 +35,13 @@ export class EditorComponent implements ControlValueAccessor {
   heigth = input<string>('300px');
   onChangeText = output<string>();
 
-  private readonly editor =
+  private readonly quillEditor =
     viewChild.required<QuillEditorComponent>('quillEditor'); // Referencia al editor
 
   private readonly fileService = inject(FileService);
 
   disabled = signal<boolean>(false);
+  isFocused = signal<boolean>(false);
   textValue = signal<string>('');
 
   constructor() {
@@ -90,7 +92,7 @@ export class EditorComponent implements ControlValueAccessor {
         const imageUrl = response?.url ?? ''; // Asegúrate de que tu backend devuelve { url: '...' }
 
         // Obtener el editor Quill y la posición del cursor
-        const quillEditor = this.editor().quillEditor;
+        const quillEditor = this.quillEditor().quillEditor;
         const range = quillEditor.getSelection(true);
 
         // Insertar la imagen en el editor
@@ -106,6 +108,11 @@ export class EditorComponent implements ControlValueAccessor {
 
   onBlur() {
     this.onTouched();
+    this.isFocused.set(false);
+  }
+
+  onFocus() {
+    this.isFocused.set(true);
   }
 
   // ***************** Control Value Accessor

@@ -1,10 +1,12 @@
 <quill-editor
   #quillEditor
   class="w-full"
+  [ngClass]="{ 'quill-focused': isFocused() }"
   [(ngModel)]="textValue"
   [modules]="configToolbar"
   [styles]="{ height: heigth() }"
   [disabled]="disabled()"
   [placeholder]="placeholder()"
   (onBlur)="onBlur()"
+  (onFocus)="onFocus()"
 ></quill-editor>

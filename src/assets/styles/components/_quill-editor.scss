@@ -1,18 +1,98 @@
 .ql-snow {
   @apply dark:!border-[#3f3f46];
-}
 
-.ql-container {
-  &:focus-within,
-  &:focus-within + .ql-toolbar {
-    @apply border !border-primary;
+  &.ql-toolbar {
+    button {
+      .ql-stroke {
+        @apply dark:stroke-slate-300;
+      }
+
+      .ql-fill {
+        @apply dark:!fill-slate-300;
+      }
+
+      &.ql-active {
+        @apply text-primary;
+
+        .ql-stroke {
+          @apply text-primary !stroke-primary;
+        }
+
+        .ql-fill {
+          @apply text-primary !fill-primary;
+
+          &:where([class="p-dark"], [class="p-dark"] *) {
+            @apply text-primary !fill-primary;
+          }
+        }
+      }
+
+      &:hover {
+        @apply text-center !text-primary;
+
+        .ql-stroke {
+          @apply text-primary !stroke-primary;
+        }
+
+        .ql-fill {
+          @apply text-primary !fill-primary;
+        }
+      }
+    }
+
+    .ql-picker-label {
+      @apply dark:text-slate-300;
+
+      .ql-stroke {
+        @apply dark:stroke-slate-300;
+      }
+
+      &.ql-active {
+        @apply text-primary;
+
+        .ql-stroke {
+          @apply text-primary !stroke-primary;
+        }
+      }
+
+      &:hover {
+        @apply text-primary;
+
+        .ql-stroke {
+          @apply text-primary stroke-primary;
+        }
+
+        .ql-fill {
+          @apply text-primary fill-primary;
+        }
+      }
+    }
+
+    .ql-picker-item {
+      &.ql-selected {
+        @apply text-primary;
+
+        .ql-stroke {
+          @apply text-primary stroke-primary;
+        }
+      }
+      &:hover {
+        @apply text-primary;
+
+        .ql-stroke {
+          @apply text-primary stroke-primary;
+        }
+      }
+    }
   }
 }
-.ql-focused {
-  border-color: #3f51b5;
-  outline: none;
-}
-.ql-toolbar-focused {
-  border-color: #3f51b5;
-  background-color: #f8f9fa;
+
+.quill-focused {
+  .ql-toolbar {
+    @apply border !border-primary;
+  }
+
+  .ql-container {
+    @apply border !border-primary;
+  }
 }
