@@ -1,5 +1,7 @@
 // Imports de primeng
-@import "./primeng/p-card", "./primeng/p-dialog", "./primeng/p-fileupload";
+@use "./primeng/p-card";
+@use "./primeng/p-dialog";
+@use "./primeng/p-fileupload";
 
 // Imports de components
-@import "./components/quill-editor";
+@use "./components/quill-editor";
