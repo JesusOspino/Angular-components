@@ -1,0 +1,12 @@
+<app-content header="Panel de administración" [showBreadcrumb]="true">
+  <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 w-full">
+    @for (item of options(); track $index) {
+    <p-card
+      styleClass="hover:cursor-pointer hover:bg-gray-100 active:bg-gray-50"
+      [routerLink]="item?.routerLink"
+    >
+      {{ item.label }}
+    </p-card>
+    }
+  </div>
+</app-content>

@@ -2,46 +2,18 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'cards',
+    path: 'config',
     loadComponent: () =>
-      import('./components/cards/cards.component').then(
-        (m) => m.CardsComponent
-      ),
+      import('./shared/layout/layout.component').then((m) => m.LayoutComponent),
+    loadChildren: () =>
+      import('./features/config/config.routes').then((m) => m.configRoutes),
   },
   {
-    path: 'dialogs',
+    path: 'admin',
     loadComponent: () =>
-      import('./components/dialogs/dialogs.component').then(
-        (m) => m.DialogsComponent
-      ),
-  },
-  {
-    path: 'editors',
-    loadComponent: () =>
-      import('./components/editors/editors.component').then(
-        (m) => m.EditorsComponent
-      ),
-  },
-  {
-    path: 'tables',
-    loadComponent: () =>
-      import('./components/tables/tables.component').then(
-        (m) => m.TablesComponent
-      ),
-  },
-  {
-    path: 'uploads',
-    loadComponent: () =>
-      import('./components/uploads/uploads.component').then(
-        (m) => m.UploadsComponent
-      ),
-  },
-  {
-    path: 'views',
-    loadComponent: () =>
-      import('./components/views/views.component').then(
-        (m) => m.ViewsComponent
-      ),
+      import('./shared/layout/layout.component').then((m) => m.LayoutComponent),
+    loadChildren: () =>
+      import('./features/admin/admin.routes').then((m) => m.adminRoutes),
   },
   {
     path: '**',
@@ -49,7 +21,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'dialogs',
+    redirectTo: 'config',
     pathMatch: 'full',
   },
 ];
