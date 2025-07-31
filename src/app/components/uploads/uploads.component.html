@@ -1,8 +1,14 @@
-<div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 shadow-md p-4">
-  <div class="w-full shadow-md p-4">
-    <app-upload-1 mode="square" />
+<app-content
+  header="Subida de archivos"
+  [showBreadcrumb]="true"
+  [closable]="true"
+>
+  <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="w-full">
+      <app-upload-1 mode="square" />
+    </div>
+    <div class="w-full">
+      <app-upload-1 mode="large" />
+    </div>
   </div>
-  <div class="w-full shadow-md p-4">
-    <app-upload-1 mode="large" />
-  </div>
-</div>
+</app-content>

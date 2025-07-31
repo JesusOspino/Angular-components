@@ -1,9 +1,21 @@
-<div
-  class="flex justify-center items-center gap-6 w-full h-[500px] p-4 shadow-md"
+<app-content
+  header="Ventanas de dialogo"
+  [showBreadcrumb]="true"
+  [closable]="true"
 >
-  <p-button label="Dialog" severity="info" (onClick)="openModal1()" />
-  <p-button label="Dinamic dialog" severity="danger" (onClick)="openModal2()" />
-  <p-button label="Custom dinamic dialog" severity="primary" (onClick)="openModal3()" />
-</div>
+  <div class="flex justify-center items-center gap-6 w-full p-4">
+    <p-button label="Dialog" severity="info" (onClick)="openModal1()" />
+    <p-button
+      label="Dinamic dialog"
+      severity="danger"
+      (onClick)="openModal2()"
+    />
+    <p-button
+      label="Custom dinamic dialog"
+      severity="primary"
+      (onClick)="openModal3()"
+    />
+  </div>
+</app-content>
 
 <app-dialog-1 [(visible)]="modal1Visible" />

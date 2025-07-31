@@ -8,10 +8,11 @@ import { Temporal } from '@interfaces/temporal.interface';
 import { Dialog3Component } from './dialog-3/dialog-3.component';
 import { DialogType } from '@enums/dialog-type.enum';
 import { Dialog2Component } from './dialog-2/dialog-2.component';
+import { ContentComponent } from '@shared/content/content.component';
 
 @Component({
   selector: 'app-dialogs',
-  imports: [ButtonModule, Dialog1Component],
+  imports: [ButtonModule, ContentComponent, Dialog1Component],
   templateUrl: './dialogs.component.html',
   styleUrl: './dialogs.component.scss',
 })
@@ -32,7 +33,7 @@ export class DialogsComponent implements OnInit {
       'Muestra las diferentes maneras de usar una ventana de dialogo con primeng'
     );
     this.configPageService.setBreadcrumbItems([
-      { label: 'Components' },
+      { label: 'Configuración', routerLink: '/config' },
       { label: 'Dialogos' },
     ]);
   }

@@ -1,17 +1,19 @@
-<div class="grid grid-cols-2 gap-2">
-  <div class="w-full p-4 shadow-md h-[300px] col-span-2 lg:col-span-1">
-    <app-view-1 />
-  </div>
+<app-content header="Vistas" [showBreadcrumb]="true" [closable]="true">
+  <div class="grid grid-cols-2 gap-4">
+    <div class="w-full h-[300px] col-span-2 lg:col-span-1">
+      <app-view-1 />
+    </div>
 
-  <div class="w-full p-4 shadow-md h-[300px] col-span-2 lg:col-span-1">
-    <app-view-2 />
-  </div>
+    <div class="w-full h-[300px] col-span-2 lg:col-span-1">
+      <app-view-2 />
+    </div>
 
-  <div class="w-full p-4 shadow-md h-[300px] col-span-2 lg:col-span-1">
-    <app-view-3 />
-  </div>
+    <div class="w-full h-[300px] col-span-2 lg:col-span-1">
+      <app-view-3 />
+    </div>
 
-  <div class="w-full p-4 shadow-md h-[300px] col-span-2 lg:col-span-1">
-    <app-view-4 />
+    <div class="w-full h-[300px] col-span-2 lg:col-span-1">
+      <app-view-4 />
+    </div>
   </div>
-</div>
+</app-content>

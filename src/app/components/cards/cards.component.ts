@@ -8,10 +8,17 @@ import { CustomDialogService } from '@services/custom-dialog.service';
 import { Temporal } from '@interfaces/temporal.interface';
 import { Card2Component } from './card-2/card-2.component';
 import { DialogType } from '@enums/dialog-type.enum';
+import { ContentComponent } from '@shared/content/content.component';
 
 @Component({
   selector: 'app-cards',
-  imports: [Card1Component, Card3Component, Card4Component, ButtonModule],
+  imports: [
+    Card1Component,
+    Card3Component,
+    Card4Component,
+    ContentComponent,
+    ButtonModule,
+  ],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.scss',
 })
@@ -29,7 +36,7 @@ export class CardsComponent {
       'Muestra las diferentes formas de usar el componente card'
     );
     this.configPageService.setBreadcrumbItems([
-      { label: 'Components' },
+      { label: 'Configuración', routerLink: '/config' },
       { label: 'Tarjetas' },
     ]);
   }
