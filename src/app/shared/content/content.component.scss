@@ -9,7 +9,7 @@
     }
 
     .content-body {
-      @apply py-4 mx-4 flex-grow overflow-y-auto;
+      @apply py-4 px-[1px] mx-4 flex-grow overflow-y-auto;
     }
 
     .content-footer {

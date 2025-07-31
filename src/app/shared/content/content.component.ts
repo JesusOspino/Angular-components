@@ -1,4 +1,4 @@
-import { NgClass, NgTemplateOutlet } from '@angular/common';
+import { Location, NgClass, NgTemplateOutlet } from '@angular/common';
 import {
   Component,
   computed,
@@ -44,11 +44,13 @@ export class ContentComponent {
   footerTemplate = contentChild<TemplateRef<any>>('footer');
 
   private readonly configPageService = inject(ConfigPageService);
+  private readonly location = inject(Location);
 
   breadcrumbItems = computed(() => this.configPageService.breadcrumbItems());
   home = signal<MenuItem>({ icon: 'pi pi-home', routerLink: '/' });
 
   close(event: Event) {
+    this.location.back();
     this.onClose.emit(event);
   }
 }
