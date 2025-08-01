@@ -1,0 +1,9 @@
+.p-splitter-visible {
+  .p-splitterpanel-nested:nth-child(1) {
+    @apply hidden;
+  }
+
+  .p-splitter-gutter {
+    @apply hidden;
+  }
+}
